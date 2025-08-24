@@ -26,7 +26,8 @@ public partial class Spawner : MultiplayerSpawner
 	{
 		if (@event is InputEventMouseButton mouseButtonEvent && mouseButtonEvent.Pressed && mouseButtonEvent.ButtonIndex == MouseButton.Left)
 		{
-			SpawnBall(GetViewport().GetMousePosition());
+			var position = mouseButtonEvent.GlobalPosition;
+			SpawnBall(position);
 		}
 	}
 }

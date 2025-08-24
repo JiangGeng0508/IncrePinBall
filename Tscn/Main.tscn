@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cp3qwgihlksc2"]
+[gd_scene load_steps=16 format=3 uid="uid://cp3qwgihlksc2"]
 
 [ext_resource type="PackedScene" uid="uid://kfg6gkeh5wim" path="res://Tscn/Ball.tscn" id="1_gbe6t"]
 [ext_resource type="Script" uid="uid://bxr62pftnunme" path="res://Cs/Main.cs" id="1_stg0l"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://14ol3oddaxde" path="res://Tscn/Coin.tscn" id="10_ks2jn"]
 [ext_resource type="Script" uid="uid://bxx40noikfxw3" path="res://Cs/MultiFocusCamera.cs" id="11_16wdn"]
 [ext_resource type="PackedScene" uid="uid://cyn6t1sqlshko" path="res://Tscn/Hud.tscn" id="12_v07e4"]
+[ext_resource type="PackedScene" uid="uid://ch5qjubwgybjc" path="res://Tscn/AutoMachine.tscn" id="13_3p4ee"]
 [ext_resource type="PackedScene" uid="uid://yg7r6kinwilt" path="res://Tscn/Cross.tscn" id="13_6o0hv"]
 [ext_resource type="PackedScene" uid="uid://oh5l5ufdpqe8" path="res://Tscn/Bonus.tscn" id="14_f7o4l"]
 
@@ -23,7 +24,7 @@ layer = -1
 
 [node name="MultiFocusCamera" type="Camera2D" parent="."]
 position = Vector2(587, 362)
-limit_left = -720
+limit_left = -10
 limit_bottom = 720
 position_smoothing_enabled = true
 drag_vertical_enabled = true
@@ -64,63 +65,95 @@ position = Vector2(402, 256)
 rotation = 0.261799
 scale = Vector2(2.78576, 0.466563)
 
-[node name="BounceBlank2" parent="." instance=ExtResource("5_ks2jn")]
-position = Vector2(774, 288)
-rotation = 4.71239
+[node name="Wall6" parent="Walls" instance=ExtResource("6_16wdn")]
+position = Vector2(1012, -287)
+rotation = -0.523598
+scale = Vector2(1, 8.25167)
 
-[node name="BounceBlank4" parent="." instance=ExtResource("5_ks2jn")]
+[node name="Wall7" parent="Walls" instance=ExtResource("6_16wdn")]
+position = Vector2(1062, -664)
+rotation = 0.785397
+scale = Vector2(1, 8.25167)
+
+[node name="Wall8" parent="Walls" instance=ExtResource("6_16wdn")]
+position = Vector2(179, -597)
+rotation = 0.785397
+scale = Vector2(1, 8.25167)
+
+[node name="Wall9" parent="Walls" instance=ExtResource("6_16wdn")]
+position = Vector2(182, -1054)
+rotation = -0.523598
+scale = Vector2(1, 11.0994)
+
+[node name="BounceBlank" type="Node2D" parent="."]
+
+[node name="BounceBlank2" parent="BounceBlank" instance=ExtResource("5_ks2jn")]
+position = Vector2(774, 288)
+rotation = -1.5708
+
+[node name="BounceBlank4" parent="BounceBlank" instance=ExtResource("5_ks2jn")]
 position = Vector2(196, 348)
 rotation = -3.14159
 scale = Vector2(0.451439, 4.8064)
 
-[node name="BounceBoard5" type="Node2D" parent="."]
+[node name="BounceBoard" type="Node2D" parent="."]
 
-[node name="BounceBoard3" parent="BounceBoard5" instance=ExtResource("7_stg0l")]
+[node name="BounceBoard3" parent="BounceBoard" instance=ExtResource("7_stg0l")]
 position = Vector2(181, 206)
 physics_material_override = ExtResource("8_xoman")
 
-[node name="BounceBoard4" parent="BounceBoard5" instance=ExtResource("7_stg0l")]
-position = Vector2(940, 566)
+[node name="BounceBoard4" parent="BounceBoard" instance=ExtResource("7_stg0l")]
+position = Vector2(967, 559)
 physics_material_override = ExtResource("8_xoman")
 
-[node name="BounceBoard" parent="BounceBoard5" instance=ExtResource("7_stg0l")]
+[node name="BounceBoard" parent="BounceBoard" instance=ExtResource("7_stg0l")]
 position = Vector2(756, 381)
 physics_material_override = ExtResource("8_xoman")
 
-[node name="BounceBoardL2" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+[node name="BounceBoardL2" parent="BounceBoard" instance=ExtResource("2_stg0l")]
 position = Vector2(206, 490)
 
-[node name="BounceBoard2" parent="BounceBoard5" instance=ExtResource("7_stg0l")]
+[node name="BounceBoard2" parent="BounceBoard" instance=ExtResource("7_stg0l")]
 position = Vector2(684, 633)
 physics_material_override = ExtResource("8_xoman")
 
-[node name="BounceBoardL3" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+[node name="BounceBoardL3" parent="BounceBoard" instance=ExtResource("2_stg0l")]
 position = Vector2(464, 634)
 
-[node name="BounceBoardL" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+[node name="BounceBoardL" parent="BounceBoard" instance=ExtResource("2_stg0l")]
 position = Vector2(481, 272)
 
-[node name="BounceBoardL8" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+[node name="BounceBoardL8" parent="BounceBoard" instance=ExtResource("2_stg0l")]
 position = Vector2(31, 401)
 
-[node name="BounceBoard5" parent="BounceBoard5" instance=ExtResource("7_stg0l")]
+[node name="BounceBoard5" parent="BounceBoard" instance=ExtResource("7_stg0l")]
 position = Vector2(1120, 185)
 rotation = -1.309
 physics_material_override = ExtResource("8_xoman")
 curingDegree = 1.57
 
-[node name="BounceBoard6" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+[node name="BounceBoard6" parent="BounceBoard" instance=ExtResource("2_stg0l")]
 position = Vector2(889, 288)
 rotation = -1.57079
 ActionKey = 1
 curingDuration = 0.3
 curingDegree = 3.14
 
-[node name="BounceBoard7" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+[node name="BounceBoard7" parent="BounceBoard" instance=ExtResource("2_stg0l")]
 position = Vector2(889, 288)
 rotation = 1.57079
 curingDuration = 0.3
 curingDegree = 3.14
+
+[node name="Cross" parent="BounceBoard" instance=ExtResource("13_6o0hv")]
+position = Vector2(439, 123)
+
+[node name="Cross2" parent="BounceBoard" instance=ExtResource("13_6o0hv")]
+position = Vector2(779, -663)
+ActionKey = 1
+
+[node name="Cross3" parent="BounceBoard" instance=ExtResource("13_6o0hv")]
+position = Vector2(595, -938)
 
 [node name="DetectArea" type="Node2D" parent="."]
 
@@ -144,9 +177,10 @@ position = Vector2(70, 209)
 [node name="DetectArea6" parent="DetectArea" instance=ExtResource("10_ks2jn")]
 position = Vector2(261, 449)
 
-[node name="Cross" parent="." instance=ExtResource("13_6o0hv")]
-position = Vector2(439, 123)
-
-[node name="Bonus" parent="." instance=ExtResource("14_f7o4l")]
+[node name="Bonus" parent="DetectArea" instance=ExtResource("14_f7o4l")]
 position = Vector2(892, 289)
+scale = Vector2(2, 2)
+
+[node name="AutoMachine" parent="." instance=ExtResource("13_3p4ee")]
+position = Vector2(578.553, 444.213)
 scale = Vector2(2, 2)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch5qjubwgybjc"]
+
+[ext_resource type="Script" uid="uid://oum1sll5cf6d" path="res://Cs/AutoMachine.cs" id="1_5m27k"]
+[ext_resource type="PhysicsMaterial" uid="uid://bvbqyju6wv8ma" path="res://Tres/Bounce.tres" id="1_jg1wh"]
+
+[node name="AutoMachine" type="AnimatableBody2D"]
+physics_material_override = ExtResource("1_jg1wh")
+script = ExtResource("1_5m27k")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)

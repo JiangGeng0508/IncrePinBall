@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnltfpwlrenu8"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://bvbqyju6wv8ma" path="res://Tres/Bounce.tres" id="1_g1371"]
+[ext_resource type="PhysicsMaterial" uid="uid://bbo6kgvgtpucc" path="res://Tres/Slide.tres" id="1_g1371"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glv2v"]
 size = Vector2(64, 64)
