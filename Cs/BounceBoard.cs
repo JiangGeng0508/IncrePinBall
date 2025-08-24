@@ -3,11 +3,14 @@ using System;
 
 public partial class BounceBoard : AnimatableBody2D
 {
-	private Tween tween2;
-	private Tween tween1;
+	private Tween tween;
 	[Export]
 	public actionKey ActionKey = actionKey.BounceL;
 	private StringName curing;
+	[Export]
+	public float curingDuration = 0.03f;
+	[Export]
+	public float curingDegree = Mathf.Pi / 6;
 	private float curingRotation;
 	private float initRotation;
 	public override void _Ready()
@@ -16,11 +19,11 @@ public partial class BounceBoard : AnimatableBody2D
 		{
 			case actionKey.BounceL:
 				curing = "BounceL";
-				curingRotation = Rotation - Mathf.Pi / 6;
+				curingRotation = Rotation - curingDegree;
 				break;
 			case actionKey.BounceR:
 				curing = "BounceR";
-				curingRotation = Rotation + Mathf.Pi / 6;
+				curingRotation = Rotation + curingDegree;
 				break;
 			default:
 				break;
@@ -32,17 +35,17 @@ public partial class BounceBoard : AnimatableBody2D
 	{
 		if (@event.IsActionPressed(curing))
 		{
-			tween1?.Kill();
-			tween1 = CreateTween();
-			tween1.TweenProperty(this, "rotation", curingRotation, 0.03f);
-			tween1.Play();
+			tween?.Kill();
+			tween = CreateTween();
+			tween.TweenProperty(this, "rotation", curingRotation, curingDuration);
+			tween.Play();
 		}
 		else if (@event.IsActionReleased(curing))
 		{
-			tween2?.Kill();
-			tween2 = CreateTween();
-			tween2.TweenProperty(this, "rotation", initRotation, 0.1f);
-			tween2.Play();
+			tween?.Kill();
+			tween = CreateTween();
+			tween.TweenProperty(this, "rotation", initRotation, 0.1f);
+			tween.Play();
 		}
 	}
 }

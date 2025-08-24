@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cp3qwgihlksc2"]
+[gd_scene load_steps=14 format=3 uid="uid://cp3qwgihlksc2"]
 
 [ext_resource type="PackedScene" uid="uid://kfg6gkeh5wim" path="res://Tscn/Ball.tscn" id="1_gbe6t"]
 [ext_resource type="Script" uid="uid://bxr62pftnunme" path="res://Cs/Main.cs" id="1_stg0l"]
@@ -12,11 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://14ol3oddaxde" path="res://Tscn/Coin.tscn" id="10_ks2jn"]
 [ext_resource type="Script" uid="uid://bxx40noikfxw3" path="res://Cs/MultiFocusCamera.cs" id="11_16wdn"]
 [ext_resource type="PackedScene" uid="uid://cyn6t1sqlshko" path="res://Tscn/Hud.tscn" id="12_v07e4"]
+[ext_resource type="PackedScene" uid="uid://yg7r6kinwilt" path="res://Tscn/Cross.tscn" id="13_6o0hv"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_stg0l")
 
 [node name="HUD" parent="." instance=ExtResource("12_v07e4")]
+layer = -1
 
 [node name="MultiFocusCamera" type="Camera2D" parent="."]
 position = Vector2(587, 362)
@@ -79,10 +81,6 @@ physics_material_override = ExtResource("8_xoman")
 position = Vector2(940, 566)
 physics_material_override = ExtResource("8_xoman")
 
-[node name="BounceBoardL4" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
-position = Vector2(421, 113)
-rotation = 1.5708
-
 [node name="BounceBoard" parent="BounceBoard5" instance=ExtResource("7_stg0l")]
 position = Vector2(756, 381)
 physics_material_override = ExtResource("8_xoman")
@@ -100,16 +98,14 @@ position = Vector2(464, 634)
 [node name="BounceBoardL" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
 position = Vector2(481, 272)
 
-[node name="BounceBoardL5" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
-position = Vector2(421, 113)
+[node name="BounceBoardL8" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+position = Vector2(31, 401)
 
-[node name="BounceBoardL6" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
-position = Vector2(421, 113)
-rotation = 3.14159
-
-[node name="BounceBoardL7" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
-position = Vector2(421, 113)
-rotation = -1.57079
+[node name="BounceBoard5" parent="BounceBoard5" instance=ExtResource("7_stg0l")]
+position = Vector2(1120, 185)
+rotation = -1.309
+physics_material_override = ExtResource("8_xoman")
+curingDegree = 1.57
 
 [node name="DetectArea" type="Node2D" parent="."]
 
@@ -118,17 +114,20 @@ position = Vector2(540, -5048)
 scale = Vector2(11.2754, 1.29532)
 
 [node name="DetectArea3" parent="DetectArea" instance=ExtResource("10_ks2jn")]
-position = Vector2(729, 231)
+position = Vector2(728, 228)
 
 [node name="DetectArea" parent="DetectArea" instance=ExtResource("4_acmn0")]
 position = Vector2(570, 1219)
 scale = Vector2(11.2754, 1.29532)
 
 [node name="DetectArea4" parent="DetectArea" instance=ExtResource("10_ks2jn")]
-position = Vector2(729, 231)
+position = Vector2(1084, 48)
 
 [node name="DetectArea5" parent="DetectArea" instance=ExtResource("10_ks2jn")]
 position = Vector2(70, 209)
 
 [node name="DetectArea6" parent="DetectArea" instance=ExtResource("10_ks2jn")]
-position = Vector2(255, 445)
+position = Vector2(261, 449)
+
+[node name="Cross" parent="." instance=ExtResource("13_6o0hv")]
+position = Vector2(439, 123)

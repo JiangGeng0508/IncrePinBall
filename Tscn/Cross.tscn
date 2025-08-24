@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://yg7r6kinwilt"]
+
+[ext_resource type="PackedScene" uid="uid://bgj07f13swo5y" path="res://Tscn/BounceBoard.tscn" id="1_oktaw"]
+
+[node name="Cross" instance=ExtResource("1_oktaw")]
+curingDuration = 0.5
+curingDegree = 1.57
+
+[node name="Polygon2D" parent="." index="0"]
+position = Vector2(0, 0)
+polygon = PackedVector2Array(32, 5, 5, -5, 5, -32, -5, -5, -32, -5, -5, 5, -5, 32, 5, 5)
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+position = Vector2(0, 0)
+polygon = PackedVector2Array(-5, -5, -32, -5, -5, 5, -5, 32, 5, 5, 32, 5, 5, -5, 5, -32)
