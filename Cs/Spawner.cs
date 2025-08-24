@@ -12,7 +12,6 @@ public partial class Spawner : MultiplayerSpawner
 	{
 		var ball = BallScene.Instantiate<Ball>();
 		ball.Position = position;
-		ball.LinearVelocity = new Vector2(0, -100);
 		GetParent().AddChild(ball);
 	}
 

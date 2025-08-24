@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp3qwgihlksc2"]
+[gd_scene load_steps=15 format=3 uid="uid://cp3qwgihlksc2"]
 
 [ext_resource type="PackedScene" uid="uid://kfg6gkeh5wim" path="res://Tscn/Ball.tscn" id="1_gbe6t"]
 [ext_resource type="Script" uid="uid://bxr62pftnunme" path="res://Cs/Main.cs" id="1_stg0l"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://bxx40noikfxw3" path="res://Cs/MultiFocusCamera.cs" id="11_16wdn"]
 [ext_resource type="PackedScene" uid="uid://cyn6t1sqlshko" path="res://Tscn/Hud.tscn" id="12_v07e4"]
 [ext_resource type="PackedScene" uid="uid://yg7r6kinwilt" path="res://Tscn/Cross.tscn" id="13_6o0hv"]
+[ext_resource type="PackedScene" uid="uid://oh5l5ufdpqe8" path="res://Tscn/Bonus.tscn" id="14_f7o4l"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_stg0l")
@@ -22,6 +23,7 @@ layer = -1
 
 [node name="MultiFocusCamera" type="Camera2D" parent="."]
 position = Vector2(587, 362)
+limit_left = -720
 limit_bottom = 720
 position_smoothing_enabled = true
 drag_vertical_enabled = true
@@ -107,6 +109,19 @@ rotation = -1.309
 physics_material_override = ExtResource("8_xoman")
 curingDegree = 1.57
 
+[node name="BounceBoard6" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+position = Vector2(889, 288)
+rotation = -1.57079
+ActionKey = 1
+curingDuration = 0.3
+curingDegree = 3.14
+
+[node name="BounceBoard7" parent="BounceBoard5" instance=ExtResource("2_stg0l")]
+position = Vector2(889, 288)
+rotation = 1.57079
+curingDuration = 0.3
+curingDegree = 3.14
+
 [node name="DetectArea" type="Node2D" parent="."]
 
 [node name="DetectArea2" parent="DetectArea" instance=ExtResource("4_acmn0")]
@@ -131,3 +146,7 @@ position = Vector2(261, 449)
 
 [node name="Cross" parent="." instance=ExtResource("13_6o0hv")]
 position = Vector2(439, 123)
+
+[node name="Bonus" parent="." instance=ExtResource("14_f7o4l")]
+position = Vector2(892, 289)
+scale = Vector2(2, 2)
