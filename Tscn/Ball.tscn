@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://kfg6gkeh5wim"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://bvbqyju6wv8ma" path="res://Tres/Bounce.tres" id="1_gk6bx"]
+[ext_resource type="Script" uid="uid://bxt8gms8r47an" path="res://Cs/Ball.cs" id="2_3tnb5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxg2q"]
+
+[node name="Ball" type="RigidBody2D" groups=["Ball", "FocusPoint"]]
+physics_material_override = ExtResource("1_gk6bx")
+script = ExtResource("2_3tnb5")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rxg2q")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-10, 0, -9, -4, -7, -7, -4, -9, 0, -10, 4, -9, 7, -7, 9, -4, 10, 0, 9, 4, 7, 7, 4, 9, 0, 10, -4, 9, -7, 7, -9, 4)

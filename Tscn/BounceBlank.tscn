@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnltfpwlrenu8"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://bvbqyju6wv8ma" path="res://Tres/Bounce.tres" id="1_g1371"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glv2v"]
+size = Vector2(64, 64)
+
+[node name="BounceBlank" type="StaticBody2D"]
+rotation = 2.09439
+scale = Vector2(3.27646, 0.554478)
+physics_material_override = ExtResource("1_g1371")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_glv2v")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(32, 32, 32, -32, -32, -32, -32, 32)

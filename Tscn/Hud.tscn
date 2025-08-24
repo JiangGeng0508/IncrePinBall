@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyn6t1sqlshko"]
+
+[ext_resource type="Script" uid="uid://dibmgu4urmcn3" path="res://Cs/Hud.cs" id="1_8px2o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7aaej"]
+font_size = 64
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_8px2o")
+
+[node name="Bonus" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.5
+offset_top = 100.0
+offset_right = 157.5
+offset_bottom = 188.0
+grow_horizontal = 2
+text = "TEST WORD"
+label_settings = SubResource("LabelSettings_7aaej")

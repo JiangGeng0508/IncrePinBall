@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://14ol3oddaxde"]
+
+[ext_resource type="PackedScene" uid="uid://cqv0gyyauvt3v" path="res://Tscn/DetectArea.tscn" id="1_2iqah"]
+[ext_resource type="Texture2D" uid="uid://di2qckjfr620u" path="res://icon.svg" id="2_ms5fd"]
+
+[node name="DetectArea" instance=ExtResource("1_2iqah")]
+Type = 1
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.2, 0.2)
+
+[node name="Icon" type="Sprite2D" parent="." index="1"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_ms5fd")
