@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cp3qwgihlksc2"]
+[gd_scene load_steps=18 format=3 uid="uid://cp3qwgihlksc2"]
 
 [ext_resource type="PackedScene" uid="uid://kfg6gkeh5wim" path="res://Tscn/Ball.tscn" id="1_gbe6t"]
 [ext_resource type="Script" uid="uid://bxr62pftnunme" path="res://Cs/Main.cs" id="1_stg0l"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://ch5qjubwgybjc" path="res://Tscn/AutoMachine.tscn" id="13_3p4ee"]
 [ext_resource type="PackedScene" uid="uid://yg7r6kinwilt" path="res://Tscn/Cross.tscn" id="13_6o0hv"]
 [ext_resource type="PackedScene" uid="uid://oh5l5ufdpqe8" path="res://Tscn/Bonus.tscn" id="14_f7o4l"]
+[ext_resource type="Texture2D" uid="uid://di2qckjfr620u" path="res://icon.svg" id="16_c5d4k"]
+[ext_resource type="PackedScene" uid="uid://bjpji1i8nodis" path="res://Tscn/WeakWall.tscn" id="17_px585"]
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_stg0l")
@@ -36,6 +38,10 @@ spawn_path = NodePath(".")
 script = ExtResource("9_acmn0")
 BallScene = ExtResource("1_gbe6t")
 CoinScene = ExtResource("10_ks2jn")
+
+[node name="SpawnNote" type="Sprite2D" parent="Spawner"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("16_c5d4k")
 
 [node name="Ball" parent="." instance=ExtResource("1_gbe6t")]
 position = Vector2(728, 63)
@@ -184,3 +190,12 @@ scale = Vector2(2, 2)
 [node name="AutoMachine" parent="." instance=ExtResource("13_3p4ee")]
 position = Vector2(578.553, 444.213)
 scale = Vector2(2, 2)
+
+[node name="WeakWall" parent="." instance=ExtResource("17_px585")]
+position = Vector2(888, 23)
+disable_mode = 1
+mass = 1000.0
+gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+freeze = true

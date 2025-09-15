@@ -3,10 +3,8 @@ using System;
 
 public partial class Spawner : MultiplayerSpawner
 {
-	[Export]
-	PackedScene BallScene;
-	[Export]
-	PackedScene CoinScene;
+	[Export] public PackedScene BallScene;
+	[Export] public PackedScene CoinScene;
 
 	public void SpawnBall(Vector2 position)
 	{
@@ -24,10 +22,14 @@ public partial class Spawner : MultiplayerSpawner
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event is InputEventMouseButton mouseButtonEvent && mouseButtonEvent.Pressed && mouseButtonEvent.ButtonIndex == MouseButton.Left)
+		if (@event is InputEventMouseButton mouseButtonEvent )
 		{
-			var position = mouseButtonEvent.GlobalPosition;
-			SpawnBall(position);
+			if (mouseButtonEvent.Pressed && mouseButtonEvent.ButtonIndex == MouseButton.Left)
+			{
+				var position = mouseButtonEvent.GlobalPosition;
+				GetNode<Sprite2D>("SpawnNote").GlobalPosition = position;
+				SpawnBall(position);
+			}
 		}
 	}
 }

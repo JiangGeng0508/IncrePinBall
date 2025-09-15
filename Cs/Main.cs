@@ -5,17 +5,17 @@ public partial class Main : Node2D
 {
 	public Hud Hud;
 	public Spawner Spawner;
-	private int bonus = 0;
+	private int _bonus = 0;
 	public int Bonus
 	{
-		get { return bonus; }
+		get { return _bonus; }
 		set
 		{
-			bonus = value;
-			Hud?.SetBonus(bonus);
+			_bonus = value;
+			Hud?.SetBonus(_bonus);
 		}
 	}
-	public bool inCoolDown = false;
+	private bool _inCoolDown = false;
 	public override void _Ready()
 	{
 		Hud = GetNode<Hud>("HUD");
@@ -31,16 +31,13 @@ public partial class Main : Node2D
 		else if (areaType == "Coin") Bonus++;
 		else if (areaType == "Bonus")
 		{
-			if (Bonus <= 0 || inCoolDown) return;
+			if (Bonus <= 0 || _inCoolDown) return;
 			Bonus--;
 			var pos = ball.Position + new Vector2(GD.Randf() * 200 - 100, GD.Randf() * 200 - 100);
 			Spawner.CallDeferred(nameof(Spawner.SpawnBall), pos);
-			GetTree().CreateTimer(0.5f).Timeout += () => { inCoolDown = false; };
-			inCoolDown = true;
+			GetTree().CreateTimer(0.5f).Timeout += () => { _inCoolDown = false; };
+			_inCoolDown = true;
 		}
 	}
-	public void Reload()
-	{
-		GetTree().ReloadCurrentScene();
-	}
+	public void Reload() => GetTree().ReloadCurrentScene();
 }

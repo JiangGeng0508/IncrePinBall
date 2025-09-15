@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://kfg6gkeh5wim"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://bvbqyju6wv8ma" path="res://Tres/Bounce.tres" id="1_gk6bx"]
+[ext_resource type="PhysicsMaterial" uid="uid://bbo6kgvgtpucc" path="res://Tres/Slide.tres" id="1_3tnb5"]
 [ext_resource type="Script" uid="uid://bxt8gms8r47an" path="res://Cs/Ball.cs" id="2_3tnb5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxg2q"]
 
 [node name="Ball" type="RigidBody2D" groups=["Ball", "FocusPoint"]]
-physics_material_override = ExtResource("1_gk6bx")
+physics_material_override = ExtResource("1_3tnb5")
 script = ExtResource("2_3tnb5")
 metadata/_edit_group_ = true
 
