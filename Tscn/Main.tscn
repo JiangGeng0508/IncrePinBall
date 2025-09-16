@@ -91,6 +91,10 @@ position = Vector2(182, -1054)
 rotation = -0.523598
 scale = Vector2(1, 11.0994)
 
+[node name="WeakWall" parent="Walls" instance=ExtResource("17_px585")]
+position = Vector2(582, 708)
+scale = Vector2(7.40184, -2.55247)
+
 [node name="BounceBlank" type="Node2D" parent="."]
 
 [node name="BounceBlank2" parent="BounceBlank" instance=ExtResource("5_ks2jn")]
@@ -190,12 +194,3 @@ scale = Vector2(2, 2)
 [node name="AutoMachine" parent="." instance=ExtResource("13_3p4ee")]
 position = Vector2(578.553, 444.213)
 scale = Vector2(2, 2)
-
-[node name="WeakWall" parent="." instance=ExtResource("17_px585")]
-position = Vector2(888, 23)
-disable_mode = 1
-mass = 1000.0
-gravity_scale = 0.0
-sleeping = true
-lock_rotation = true
-freeze = true

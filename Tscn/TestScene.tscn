@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwuughic8cb8f"]
+
+[ext_resource type="PackedScene" uid="uid://bjpji1i8nodis" path="res://Tscn/WeakWall.tscn" id="1_0ows0"]
+[ext_resource type="PackedScene" uid="uid://kfg6gkeh5wim" path="res://Tscn/Ball.tscn" id="2_oigpx"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="WeakWall" parent="." instance=ExtResource("1_0ows0")]
+position = Vector2(634, 542)
+scale = Vector2(8.89656, 2.20115)
+Health = 10
+
+[node name="Ball" parent="." instance=ExtResource("2_oigpx")]
+position = Vector2(621, 244)
